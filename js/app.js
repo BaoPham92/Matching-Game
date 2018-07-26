@@ -31,7 +31,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Condition for click functions.
         if (eClick.classList.contains('card') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
+
+            // Toggle class of 'open' and 'show'
             pickCard(eClick);
+
+            // Deposit elements in array. (cards)
             depositCard(eClick);
 
             // Condition for checking element selection. (cards matching)
@@ -40,6 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Condition for matching elements. (cards)
         function ifMatch() {
+
+            // Conditional for checking the 2 selected elements. (cards)
             if (clickedCards[0].innerHTML === clickedCards[1].innerHTML) {
                 clickedCards[0].classList.toggle('match');
                 clickedCards[1].classList.toggle('match');
@@ -47,10 +53,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 clickedCards = []; // Clear array so the next match can sequence.
 
                 console.log(`Matching cards!`); // Confirmination message to console for a match.
+
             } else if (clickedCards[0].innerHTML !== clickedCards[1].innerHTML) {
 
                 // Timer for element clearing. (cards)
-                setTimeout( () => {
+                setTimeout(() => {
 
                     // Toggle the index of the array for elements.
                     pickCard(clickedCards[0]);
@@ -59,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Clear array so the next match can sequence. 
                     clickedCards = [];
 
-                } , 1500);
+                }, 1500);
 
                 // Logging false match to message to console.
                 console.log(`No match found.`)
@@ -95,6 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(`Restart button clicked!`);
     })
 
+    // Removing all classes for elements. (cards)
     function reset() {
 
         // Iteration for removing classes to restart.
