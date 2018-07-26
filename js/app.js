@@ -8,14 +8,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Deck of cards upon interaction. (Dynamic elements storage.)
     let clickedCards = [];
-
+    
+    // Cards.
+    const cards = document.querySelectorAll('.card');
+    console.log(cards); //Confirmination console message.
+    
     // Restart button.
     const restartButton = document.querySelector('.restart');
     console.log(restartButton); // Confirmination console message.
 
-    // Cards.
-    const cards = document.querySelectorAll('.card');
-    console.log(cards); //Confirmination console message.
+    // Moves counter.
+    const moves = document.querySelector('.moves');
+    console.log(moves); // Confirmination console message.
+
+    // Stars indicator.
+    const stars = document.querySelector('.stars');
+    console.log(stars); // Confirmination console message.
 
     // FUNCTIONS
 
