@@ -8,21 +8,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Deck of cards upon interaction. (Dynamic elements storage.)
     let clickedCards = [];
-    
+
     // Cards.
     const cards = document.querySelectorAll('.card');
     console.log(cards); //Confirmination console message.
-    
+
     // Restart button.
     const restartButton = document.querySelector('.restart');
     console.log(restartButton); // Confirmination console message.
 
     // Moves counter.
-    const moves = document.querySelector('.moves');
+    let moves = document.querySelector('.moves');
     console.log(moves); // Confirmination console message.
 
+    // Number of moves.
+    let numMoves;
+
     // Stars indicator.
-    const stars = document.querySelector('.stars');
+    let stars = document.querySelector('.stars');
     console.log(stars); // Confirmination console message.
 
     // FUNCTIONS
@@ -84,14 +87,27 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 }, 750);
 
+                parse();
+
                 // Logging false match to message to console.
                 console.log(`No match found.`)
 
             };
         }
 
+        // ParsesInt moves to current
+        function parse() {
+
+            // Subtract amount of moves left.
+            numMoves = parseInt(moves.innerHTML, 10) - 1;
+            moves.innerHTML = numMoves;
+            console.log(moves.innerHTML);
+        }
+
         // Element toggle invalid element selection
         function invalid(eClick) {
+
+            // Toggle classs for invalid.
             eClick.classList.toggle('invalid');
         }
 
