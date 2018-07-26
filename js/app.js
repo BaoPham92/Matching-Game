@@ -95,6 +95,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 starCount();
 
+                if (numMoves === 0) {
+
+                    // Temporary lose game indicator.
+                    alert(`You lose`);
+                }
+
                 // Logging false match to message to console.
                 console.log(`No match found.`)
 
