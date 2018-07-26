@@ -56,22 +56,35 @@ document.addEventListener('DOMContentLoaded', function () {
 
             } else if (clickedCards[0].innerHTML !== clickedCards[1].innerHTML) {
 
-                // Timer for element clearing. (cards)
+                // Toggle invalid immediately to selected elements.
+                invalid(clickedCards[0]);
+                invalid(clickedCards[1]);
+
+                // Timer for element class toggle. (cards)
                 setTimeout(() => {
 
-                    // Toggle the index of the array for elements.
+                    // Toggle invalid again after timer.
+                    invalid(clickedCards[0]);
+                    invalid(clickedCards[1]);
+
+                    // Toggle open and show classes.
                     pickCard(clickedCards[0]);
                     pickCard(clickedCards[1]);
 
                     // Clear array so the next match can sequence. 
                     clickedCards = [];
 
-                }, 1500);
+                }, 750);
 
                 // Logging false match to message to console.
                 console.log(`No match found.`)
 
             };
+        }
+
+        // Element toggle invalid element selection
+        function invalid(eClick) {
+            eClick.classList.toggle('invalid');
         }
 
         // Element toggle class function.
