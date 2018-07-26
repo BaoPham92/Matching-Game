@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // console.log(eClick); Confirmination message to console. 
 
         // Condition for click functions.
-        if (eClick.classList.contains('card') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
+        if (eClick.classList.contains('card') && !eClick.classList.contains('match') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
 
             // Toggle class of 'open' and 'show'
             pickCard(eClick);
