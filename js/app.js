@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let numMoves;
 
     // Stars indicator.
-    let stars = document.querySelector('.stars');
+    let stars = document.getElementById('starCounter');
     console.log(stars); // Confirmination console message.
 
     // FUNCTIONS
@@ -87,7 +87,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 }, 750);
 
-                parse();
+                // Subtract amount of moves left.
+                numMoves = parseInt(moves.innerHTML, 10) - 1;
+                moves.innerHTML = numMoves;
+
+                console.log(numMoves); // Confirmination message to conssole.
+
+                starCount();
 
                 // Logging false match to message to console.
                 console.log(`No match found.`)
@@ -95,13 +101,11 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         }
 
-        // ParsesInt moves to current
-        function parse() {
+        // Star count
+        function starCount() {
 
-            // Subtract amount of moves left.
-            numMoves = parseInt(moves.innerHTML, 10) - 1;
-            moves.innerHTML = numMoves;
-            console.log(moves.innerHTML);
+            // Remove the amount of elements = moves. (stars)
+            stars.removeChild(stars.lastElementChild);
         }
 
         // Element toggle invalid element selection
