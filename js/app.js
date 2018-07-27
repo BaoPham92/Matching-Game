@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Stars indicator.
     let stars = document.getElementById('starCounter');
     console.log(stars); // Confirmination console message.
-    
+
     // Contains star's original state.
     let starContainer = stars.innerHTML;
 
@@ -120,15 +120,6 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         }
 
-        // Reload stars
-        function reloadStars() {
-        
-            // Reload previous information state.
-            stars.innerHTML = starContainer;
-
-            console.log(stars) // Confirmination console message.
-        }
-
         // Star count
         function starCount() {
 
@@ -167,6 +158,12 @@ document.addEventListener('DOMContentLoaded', function () {
         // Iteration for removing classes to restart.
         reset();
 
+        // Reset move counter
+        moves.innerHTML = `3`;
+
+        // Reload li elements. (stars)
+        reloadStars();
+
         // Confirmination console message.
         console.log(`Restart button clicked!`);
     })
@@ -178,6 +175,15 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const card of cards) {
             card.classList.remove('match', 'open', 'show');
         }
+    }
+
+    // Reload stars
+    function reloadStars() {
+
+        // Reload previous information state.
+        stars.innerHTML = starContainer;
+
+        console.log(stars) // Confirmination console message.
     }
 
     /*
