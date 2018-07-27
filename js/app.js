@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Stars indicator.
     let stars = document.getElementById('starCounter');
     console.log(stars); // Confirmination console message.
+    
+    // Contains star's original state.
+    let starContainer = stars.innerHTML;
 
     // FUNCTIONS
 
@@ -95,16 +98,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 starCount();
 
+                // Conditional for moves at 0.
                 if (numMoves === 0) {
 
                     // Temporary lose game indicator.
-                    alert(`You lose`);
+                    setTimeout(() => {
+                        alert(`You lose`);
+                    }, 500);
+
+                    reloadStars();
+
                 }
 
                 // Logging false match to message to console.
                 console.log(`No match found.`)
 
             };
+        }
+
+        // Reload stars
+        function reloadStars() {
+        
+            // Reload previous information state.
+            stars.innerHTML = starContainer;
+
+            console.log(stars) // Confirmination console message.
         }
 
         // Star count
