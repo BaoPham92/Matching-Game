@@ -106,7 +106,11 @@ document.addEventListener('DOMContentLoaded', function () {
                         alert(`You lose`);
                     }, 500);
 
+                    // Reload li elements. (stars)
                     reloadStars();
+
+                    // Reset move counter
+                    moves.innerHTML = `3`;
 
                 }
 
