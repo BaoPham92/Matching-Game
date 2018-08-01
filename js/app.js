@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let clickedCards = [];
 
     // Cards.
-    const cards = document.querySelectorAll('.card');
+    const cards = document.getElementsByClassName('card');
     console.log(cards); //Confirmination console message.
 
     // Restart button.
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Event delegation. (click listener)
         const eClick = e.target;
-        // console.log(eClick); Confirmination message to console. 
+        console.log(eClick); // Confirmination message to console. 
 
         // Condition for click functions.
         if (eClick.classList.contains('card') && !eClick.classList.contains('match') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
@@ -105,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     setTimeout(() => {
                         alert(`You lose`);
                     }, 500);
+
+
 
                     // Reload li elements. (stars)
                     reloadStars();
@@ -175,17 +177,37 @@ document.addEventListener('DOMContentLoaded', function () {
         for (const card of cards) {
             card.classList.remove('match', 'open', 'show');
         }
-    }
 
+        randomize();
+    }
+    
     // Reload stars
     function reloadStars() {
-
+        
         // Reload previous information state.
         stars.innerHTML = starContainer;
-
+        
         console.log(stars) // Confirmination console message.
     }
+    
+    function randomize() {
+        
+        // New deck container
+        const newDeck = Array.from(document.querySelectorAll('.deck li'));
+        console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
 
+        // Container for shuffled cards.
+        const randomizedDeck = shuffle(newDeck);
+        console.log('cards that are shuffled', randomizedDeck); // Confirmination message to console.
+
+        // Replace the old nodeList with new one.
+        for (const card of newDeck) {
+            deck.appendChild(card);
+        }
+
+        console.log(`Randomized cards activated`); // Confirmination console message.
+    }
+    
     /*
      * Display the cards on the page
      *   - shuffle the list of cards using the provided "shuffle" method below
