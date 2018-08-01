@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Contains star's original state.
     let starContainer = stars.innerHTML;
 
+    // Timer toggle.
+    let toggleTime = false;
+
+    // Container for incremented time.
+    let timeContainer = 0;
+
     // FUNCTIONS
 
     // On load reset board.
@@ -47,7 +53,18 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(eClick); // Confirmination message to console. 
 
         // Timer activation.
+        if (clickConditionals(eClick)) {
 
+            // Check the boolean of timer.
+            if(!toggleTime) {
+
+                // Invoke the timer function.
+                timer();
+
+                // Turn boolean to true.
+                toggleTime = true;
+            }
+        }
 
         // Condition for clicking elements for checking matches. (cards)
         if (clickConditionals(eClick)) {
@@ -238,10 +255,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // randomize();
     }
 
+    // Incrementing timer for time indicator.
     function timer() {
-        
-        // Time container.
-        let timeContainer = 0;
 
         // Trigger for time counter.
         setInterval(()=>{
