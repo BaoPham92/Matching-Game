@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const eClick = e.target;
         console.log(eClick); // Confirmination message to console. 
 
-        // Condition for click functions.
+        // Condition for clicking elements. (cards)
         if (eClick.classList.contains('card') && !eClick.classList.contains('match') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
 
             // Toggle class of 'open' and 'show'
@@ -57,6 +57,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Condition for checking element selection. (cards matching)
             clickedCards.length === 2 ? ifMatch() : console.log(`No match.`);
+        }
+
+        //  Condition if matchedCards.length is 16 
+        if (matchedCards.length === 16) {
+
+            // Temporary winning message. (Todo: Create scoreboard to replace the alert.)
+            alert(`You win!`);
         }
 
         // Condition for matching elements. (cards)
@@ -72,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Deposit matching elements.
                 matchedCards.push(clickedCards[0]);
                 matchedCards.push(clickedCards[1]);
-                console.log(matchedCards); // Confirmination message to console.
+                console.log(matchedCards.length); // Confirmination message to console.
 
                 clickedCards = []; // Clear array so the next match can sequence.
 
@@ -141,10 +148,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     //     // Element (cards) randomization upon losing game conditions.
                     //     randomize();
-                        
+
                     // }, 500);
 
-                }
+                } 
 
                 // Logging false match to message to console.
                 console.log(`No match found.`)
@@ -211,19 +218,19 @@ document.addEventListener('DOMContentLoaded', function () {
         // Randomize elements. (cards)
         // randomize();
     }
-    
+
     // Reload stars
     function reloadStars() {
-        
+
         // Reload previous information state.
         stars.innerHTML = starContainer;
-        
+
         console.log(stars) // Confirmination console message.
     }
-    
+
     // Randomize the children elements of the .deck class.
     // function randomize() {
-        
+
     //     // New deck container
     //     const newDeck = Array.from(document.querySelectorAll('.deck li'));
     //     console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
@@ -239,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //     console.log(`Randomized cards activated`); // Confirmination console message.
     // }
-    
+
     /*
      * Display the cards on the page
      *   - shuffle the list of cards using the provided "shuffle" method below
