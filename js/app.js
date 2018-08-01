@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Clear array so the next match can sequence. 
                     clickedCards = [];
 
-                }, 750);
+                }, 550);
 
                 // Subtract amount of moves left.
                 numMoves = parseInt(moves.innerHTML, 10) - 1;
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Conditional for moves at 0.
                 if (numMoves === 0) {
 
-                    // Temporary lose game indicator.
+                    // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
 
                         // Losing message prompt on the client.
@@ -113,11 +113,23 @@ document.addEventListener('DOMContentLoaded', function () {
                         // Reset move counter
                         moves.innerHTML = `3`;
 
+                        // Remove matching elements. (cards)
+                        for (const card of cards) {
+
+                            // Conditional for matching elements leftover on board.
+                            if (card.classList.contains('match')) {
+
+                                // Remove classes for the remaining matching elements.
+                                card.classList.remove('match', 'open', 'show');
+                            }
+                        }
+
                     }, 250);
 
+                    // Other functions to execute after firsts timer clears.
                     setTimeout(() => {
 
-                        // Card randomization upon losing game conditions.
+                        // Element (cards) randomization upon losing game conditions.
                         randomize();
                         
                     }, 500);
@@ -142,6 +154,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Toggle classs for invalid.
             eClick.classList.toggle('invalid');
+        }
+
+        // Matching element function to toggle class 'match'.
+        function matching() {
+
+            // Toggle match.
+            for (const card of cards) {
+                card.classList.toggle('match');
+            }
         }
 
         // Element toggle class function.
@@ -186,6 +207,7 @@ document.addEventListener('DOMContentLoaded', function () {
             card.classList.remove('match', 'open', 'show');
         }
 
+        // Randomize elements. (cards)
         randomize();
     }
     
