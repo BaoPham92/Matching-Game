@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Deck of cards upon interaction. (Dynamic elements storage.)
     let clickedCards = [];
 
+    // Container for matching cards
+    let matchedCards = [];
+
     // Cards.
     const cards = document.getElementsByClassName('card');
     console.log(cards); //Confirmination console message.
@@ -61,8 +64,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Conditional for checking the 2 selected elements. (cards)
             if (clickedCards[0].innerHTML === clickedCards[1].innerHTML) {
+
+                // Toggle .match class with elements that clicked.
                 clickedCards[0].classList.toggle('match');
                 clickedCards[1].classList.toggle('match');
+
+                // Deposit matching elements.
+                matchedCards.push(clickedCards[0]);
+                matchedCards.push(clickedCards[1]);
+                console.log(matchedCards); // Confirmination message to console.
 
                 clickedCards = []; // Clear array so the next match can sequence.
 
@@ -127,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 250);
 
                     // Other functions to execute after firsts timer clears.
-                    setTimeout(() => {
+                    // setTimeout(() => {
 
-                        // Element (cards) randomization upon losing game conditions.
-                        randomize();
+                    //     // Element (cards) randomization upon losing game conditions.
+                    //     randomize();
                         
-                    }, 500);
+                    // }, 500);
 
                 }
 
@@ -154,15 +164,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Toggle classs for invalid.
             eClick.classList.toggle('invalid');
-        }
-
-        // Matching element function to toggle class 'match'.
-        function matching() {
-
-            // Toggle match.
-            for (const card of cards) {
-                card.classList.toggle('match');
-            }
         }
 
         // Element toggle class function.
@@ -208,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Randomize elements. (cards)
-        randomize();
+        // randomize();
     }
     
     // Reload stars
@@ -220,23 +221,24 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(stars) // Confirmination console message.
     }
     
-    function randomize() {
+    // Randomize the children elements of the .deck class.
+    // function randomize() {
         
-        // New deck container
-        const newDeck = Array.from(document.querySelectorAll('.deck li'));
-        console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
+    //     // New deck container
+    //     const newDeck = Array.from(document.querySelectorAll('.deck li'));
+    //     console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
 
-        // Container for shuffled cards.
-        const randomizedDeck = shuffle(newDeck);
-        console.log('cards that are shuffled', randomizedDeck); // Confirmination message to console.
+    //     // Container for shuffled cards.
+    //     const randomizedDeck = shuffle(newDeck);
+    //     console.log('cards that are shuffled', randomizedDeck); // Confirmination message to console.
 
-        // Replace the old nodeList with new one.
-        for (const card of newDeck) {
-            deck.appendChild(card);
-        }
+    //     // Replace the old nodeList with new one.
+    //     for (const card of newDeck) {
+    //         deck.appendChild(card);
+    //     }
 
-        console.log(`Randomized cards activated`); // Confirmination console message.
-    }
+    //     console.log(`Randomized cards activated`); // Confirmination console message.
+    // }
     
     /*
      * Display the cards on the page
