@@ -103,16 +103,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Temporary lose game indicator.
                     setTimeout(() => {
+
+                        // Losing message prompt on the client.
                         alert(`You lose`);
+
+                        // Reload li elements. (stars)
+                        reloadStars();
+
+                        // Reset move counter
+                        moves.innerHTML = `3`;
+
+                    }, 250);
+
+                    setTimeout(() => {
+
+                        // Card randomization upon losing game conditions.
+                        randomize();
+                        
                     }, 500);
-
-
-
-                    // Reload li elements. (stars)
-                    reloadStars();
-
-                    // Reset move counter
-                    moves.innerHTML = `3`;
 
                 }
 
