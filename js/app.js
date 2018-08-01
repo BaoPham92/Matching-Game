@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Deck of cards. (Current static state of elements)
     const deck = document.querySelector('.deck');
-    console.log(deck); // Confirmination console message.
+    console.log('Current deck list.' ,deck); // Confirmination console message.
 
     // Deck of cards upon interaction. (Dynamic elements storage.)
     let clickedCards = [];
@@ -14,22 +14,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cards.
     const cards = document.getElementsByClassName('card');
-    console.log(cards); //Confirmination console message.
+    console.log('Card elements', cards); //Confirmination console message.
 
     // Restart button.
     const restartButton = document.querySelector('.restart');
-    console.log(restartButton); // Confirmination console message.
+    // console.log(restartButton); // Confirmination console message.
 
     // Moves counter.
     let moves = document.querySelector('.moves');
-    console.log(moves); // Confirmination console message.
+    // console.log(moves); // Confirmination console message.
 
     // Number of moves.
     let numMoves;
 
     // Stars indicator.
     let stars = document.getElementById('starCounter');
-    console.log(stars); // Confirmination console message.
+    // console.log(stars); // Confirmination console message.
 
     // Contains star's original state.
     let starContainer = stars.innerHTML;
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             depositCard(eClick);
 
             // Condition for checking element selection. (cards matching)
-            clickedCards.length === 2 ? ifMatch() : console.log(`No match.`);
+            clickedCards.length === 2 ? ifMatch() : console.log(`Error or require 2 cards clicked.`);
         }
 
         //  Condition if all elements are matched. 
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Deposit matching elements.
                 matchedCards.push(clickedCards[0]);
                 matchedCards.push(clickedCards[1]);
-                console.log(matchedCards.length); // Confirmination message to console.
+                console.log(`# of matched cards stored ${matchedCards.length}.`); // Confirmination message to console.
 
                 clickedCards = []; // Clear array so the next match can sequence.
 
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 numMoves = parseInt(moves.innerHTML, 10) - 1;
                 moves.innerHTML = numMoves;
 
-                console.log(numMoves); // Confirmination message to conssole.
+                console.log(`Number of moves left ${numMoves}.`); // Confirmination message to conssole.
 
                 starCount();
 
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 } 
 
                 // Logging false match to message to console.
-                console.log(`No match found.`)
+                console.log(`Checked cards. No match found.`)
 
             };
         }
@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Adding target delegation to clickedCards array.
             clickedCards.push(eClick);
 
-            console.log(clickedCards); // Confirmination message.
+            console.log(`Deposited cards.`); // Confirmination message.
         }
 
         // Reload stars
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Reload previous information state.
             stars.innerHTML = starContainer;
 
-            console.log(stars) // Confirmination console message.
+            console.log('The stars indicators reloaded', stars) // Confirmination console message.
         }
     });
 
