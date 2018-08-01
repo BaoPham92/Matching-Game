@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(eClick); // Confirmination message to console. 
 
         // Timer activation.
-        if (clickConditionals(eClick)) {
+        if (clickConditionals(eClick) && toggleTime === false) {
 
             // Check the boolean of timer.
             if(!toggleTime) {
