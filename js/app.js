@@ -189,6 +189,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log(clickedCards); // Confirmination message.
         }
+
+        // Reload stars
+        function reloadStars() {
+
+            // Reload previous information state.
+            stars.innerHTML = starContainer;
+
+            console.log(stars) // Confirmination console message.
+        }
     });
 
     // Restart board state.
@@ -217,15 +226,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Randomize elements. (cards)
         // randomize();
-    }
-
-    // Reload stars
-    function reloadStars() {
-
-        // Reload previous information state.
-        stars.innerHTML = starContainer;
-
-        console.log(stars) // Confirmination console message.
     }
 
     // Randomize the children elements of the .deck class.
