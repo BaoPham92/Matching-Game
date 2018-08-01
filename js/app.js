@@ -46,8 +46,11 @@ document.addEventListener('DOMContentLoaded', function () {
         const eClick = e.target;
         console.log(eClick); // Confirmination message to console. 
 
-        // Condition for clicking elements. (cards)
-        if (eClick.classList.contains('card') && !eClick.classList.contains('match') && clickedCards.length < 2 && !clickedCards.includes(eClick)) {
+        // Timer activation.
+
+
+        // Condition for clicking elements for checking matches. (cards)
+        if (clickConditionals(eClick)) {
 
             // Toggle class of 'open' and 'show'
             pickCard(eClick);
@@ -59,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
             clickedCards.length === 2 ? ifMatch() : console.log(`No match.`);
         }
 
-        //  Condition if matchedCards.length is 16 
+        //  Condition if all elements are matched. 
         if (matchedCards.length === 16) {
 
             // Temporary winning message. (Todo: Create scoreboard to replace the alert.)
@@ -159,6 +162,13 @@ document.addEventListener('DOMContentLoaded', function () {
             };
         }
 
+        // Function to call conditionals for card elements.
+        function clickConditionals(eClick) {
+
+            // Conditionals checking whether a element is to be clicked for possible pairing elements.
+            return (eClick.classList.contains('card') && !eClick.classList.contains('match') && clickedCards.length < 2 && !clickedCards.includes(eClick));
+        }
+
         // Star count
         function starCount() {
 
@@ -226,6 +236,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Randomize elements. (cards)
         // randomize();
+    }
+
+    function timer() {
+        
+        // Time container.
+        let timeContainer = 0;
+
+        // Trigger for time counter.
+        setInterval(()=>{
+
+            // Increment timeContainer.
+            timeContainer++;
+
+            // Confirmination message to console.
+            console.log(timeContainer);
+
+        }, 1000)
     }
 
     // Randomize the children elements of the .deck class.
