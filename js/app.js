@@ -265,9 +265,20 @@ document.addEventListener('DOMContentLoaded', function () {
             timeContainer++;
 
             // Confirmination message to console.
-            console.log(timeContainer);
+            console.log(`${timeContainer} seconds.`);
+
+            displayTime();
 
         }, 1000)
+    }
+
+    function displayTime() {
+
+        // Timer element.
+        const clientTimer = document.querySelector('.timer');
+
+        // Set the HTML content of (.timer) element to variable timeContainer.
+        clientTimer.innerHTML = timeContainer;
     }
 
     // Randomize the children elements of the .deck class.
