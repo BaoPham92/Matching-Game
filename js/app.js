@@ -133,7 +133,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 console.log(`Number of moves left ${numMoves}.`); // Confirmination message to conssole.
 
-                starCount();
+                // Remove stars each time 2 moves are used up.
+                switch (numMoves) {
+                    case 4: starCount();
+                    break;
+                    case 2: starCount(); 
+                    break;
+                    case 0: starCount();
+                    break;
+                }
 
                 // Conditional for moves at 0.
                 if (numMoves === 0) {
@@ -148,7 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         reloadStars();
 
                         // Reset move counter
-                        moves.innerHTML = `3`;
+                        moves.innerHTML = `6`;
 
                         // Remove matching elements. (cards)
                         for (const card of cards) {
@@ -216,15 +224,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log(`Deposited cards.`); // Confirmination message.
         }
-
-        // Reload stars
-        function reloadStars() {
-
-            // Reload previous information state.
-            stars.innerHTML = starContainer;
-
-            console.log('The stars indicators reloaded', stars) // Confirmination console message.
-        }
     });
 
     // Restart board state.
@@ -234,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function () {
         reset();
 
         // Reset move counter
-        moves.innerHTML = `3`;
+        moves.innerHTML = `6`;
 
         // Reload li elements. (stars)
         reloadStars();
@@ -253,6 +252,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Randomize elements. (cards)
         // randomize();
+    }
+
+    // Reload stars
+    function reloadStars() {
+
+        // Reload previous information state.
+        stars.innerHTML = starContainer;
+
+        console.log('The stars indicators reloaded', stars) // Confirmination console message.
     }
 
     // Incrementing timer for time indicator.
