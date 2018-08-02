@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Deck of cards. (Current static state of elements)
     const deck = document.querySelector('.deck');
-    console.log('Current deck list.' ,deck); // Confirmination console message.
+    console.log('Current deck list.', deck); // Confirmination console message.
 
     // Deck of cards upon interaction. (Dynamic elements storage.)
     let clickedCards = [];
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (clickConditionals(eClick) && toggleTime === false) {
 
             // Check the boolean of timer.
-            if(!toggleTime) {
+            if (!toggleTime) {
 
                 // Invoke the timer function.
                 timer();
@@ -171,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // }, 500);
 
-                } 
+                }
 
                 // Logging false match to message to console.
                 console.log(`Checked cards. No match found.`)
@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function timer() {
 
         // Trigger for time counter.
-        setInterval(()=>{
+        setInterval(() => {
 
             // Increment timeContainer.
             timeContainer++;
@@ -267,6 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // Confirmination message to console.
             console.log(`${timeContainer} seconds.`);
 
+            // Invoking displayTime function.
             displayTime();
 
         }, 1000)
@@ -274,11 +275,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayTime() {
 
+        let seconds = timeContainer % 60;
+
+        let minutes = Math.floor(timeContainer / 60);
+
         // Timer element.
         const clientTimer = document.querySelector('.timer');
 
         // Set the HTML content of (.timer) element to variable timeContainer.
-        clientTimer.innerHTML = timeContainer;
+        seconds < 10 ? clientTimer.innerHTML = `${minutes}:0${seconds}` : clientTimer.innerHTML = `${minutes}:${seconds}`;
     }
 
     // Randomize the children elements of the .deck class.
