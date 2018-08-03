@@ -40,6 +40,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Container for incremented time.
     let timeContainer = 0;
 
+    // Container for timeCounter variable on line 272.
+    let timeCounter;
+
     // FUNCTIONS
 
     // On load reset board.
@@ -144,6 +147,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Conditional for moves at 0.
                 if (numMoves === 0) {
+
+                    // Clear timer.
+                    clearTimer();
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
@@ -266,7 +272,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function timer() {
 
         // Trigger for time counter.
-        setInterval(() => {
+        timeCounter = setInterval(() => {
 
             // Increment timeContainer.
             timeContainer++;
@@ -278,6 +284,13 @@ document.addEventListener('DOMContentLoaded', function () {
             displayTime();
 
         }, 1000)
+    }
+
+    // Function for clearing timer.
+    function clearTimer() {
+
+        // Clear the variable containing the incrementing time logic.
+        clearInterval(timeCounter);
     }
 
     function displayTime() {
