@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Subtract amount of moves left.
                 numMoves = parseInt(moves.innerHTML, 10) - 1;
                 moves.innerHTML = numMoves;
-
                 console.log(`Number of moves left ${numMoves}.`); // Confirmination message to conssole.
 
                 // Remove stars each time 2 moves are used up.
