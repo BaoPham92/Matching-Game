@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <title>Matching Game</title>
@@ -8,6 +9,7 @@
     <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
     <link rel="stylesheet" href="css/app.css">
 </head>
+
 <body>
 
     <div class="container">
@@ -17,26 +19,43 @@
 
         <div class="modal">
             <div class="modal-content">
-                
+                <div class="modal-heading">
+                    <h1>Game statistics:</h1>
+                    <span class="modal-x">
+                        <strong>X</strong>
+                    </span>
+                </div>
+
+                <div class="modal-stat">
+                    <span id="modal-stars">Stars left:</span>
+                    <span id="modal-moves">Number of moves left:</span>
+                    <span id="modal-time">Time spent:</span>
+                </div>
             </div>
         </div>
 
         <section class="score-panel">
 
             <span class="timer">0:00</span>
-            
-        	<ul id="starCounter" class="stars">
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
-        		<li><i class="fa fa-star"></i></li>
+
+            <ul id="starCounter" class="stars">
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                </li>
             </ul>
 
             <span class="moves">6</span> Moves
 
             <div class="restart">
-        		<i class="fa fa-repeat"></i>
+                <i class="fa fa-repeat"></i>
             </div>
-            
+
         </section>
 
         <ul id="deckShuffle" class="deck">
@@ -93,4 +112,5 @@
 
     <script src="js/app.js"></script>
 </body>
+
 </html>
