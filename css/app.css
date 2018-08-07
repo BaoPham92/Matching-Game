@@ -123,7 +123,7 @@ h1 {
     align-items: center;
     position: fixed;
     height: 80%;
-    width: 80%;
+    width: 75%;
     background-color: rgba(0, 0, 0, .75);
 }
 
@@ -131,6 +131,7 @@ h1 {
     height: 80%;
     width: 80%;
     background-color: white;
+    font-size: 25px;
 }
 
 .modal-heading {
@@ -138,5 +139,15 @@ h1 {
     align-items: center;
     justify-content: space-between;
     border-bottom: solid 1px black;
-    padding: 0px 40px;
+    padding: 5px 40px;
+    margin: 8px 0;
+}
+
+.modal-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 450px;
+    border-bottom: solid 1px black;
 }
