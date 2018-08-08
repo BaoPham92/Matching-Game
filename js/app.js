@@ -337,6 +337,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Current time.
         let totalTime = gameTimer.innerHTML;
 
+        // Conditional if element is hidden.
+        if (modal.contains('hidden')) {
+
+            // Invoke function for toggling class .hidden.
+            hideModal();
+        }
+
         // Click listener for clicking the close element in modal container.
         x.addEventListener('click', function () {
 
