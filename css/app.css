@@ -115,12 +115,6 @@ h1 {
     cursor: pointer;
 }
 
-/* Section container for modal. */
-
-.score-board {
-    display: none;
-}
-
 /* Modal styling. */
 
 .modal {
