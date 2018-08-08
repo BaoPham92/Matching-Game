@@ -29,10 +29,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Stars indicator.
     let stars = document.getElementById('starCounter');
-    // console.log(stars); // Confirmination console message.
+    // console.log(stars.children.length); // Confirmination console message.
 
     // Contains star's original state.
     let starContainer = stars.innerHTML;
+
+    // Timer element.
+    const gameTimer = document.querySelector('.timer');
 
     // Timer toggle.
     let toggleTime = false;
@@ -55,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const eClick = e.target;
         console.log(eClick); // Confirmination message to console. 
 
-        // Timer activation.
+        // Timer activation. (Game clock.)
         if (clickConditionals(eClick) && toggleTime === false) {
 
             // Check the boolean of timer.
@@ -299,11 +302,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
         let minutes = Math.floor(timeContainer / 60);
 
-        // Timer element.
-        const clientTimer = document.querySelector('.timer');
-
         // Set the HTML content of (.timer) element to variable timeContainer.
-        seconds < 10 ? clientTimer.innerHTML = `${minutes}:0${seconds}` : clientTimer.innerHTML = `${minutes}:${seconds}`;
+        seconds < 10 ? gameTimer.innerHTML = `${minutes}:0${seconds}` : gameTimer.innerHTML = `${minutes}:${seconds}`;
+    }
+
+    function displayScore() {
+
+        // The amount of stars left whilst displayScore is being invoked.
+        let totalStars = stars.children.length;
+        
+        // The amount of moves left whilst displayScore() is invoked.
+        let totalMoves = numMoves;
+
+        // The amount of time whilst displayScore() is invoked.
+        let totalTime = gameTimer.innerHTML;
     }
 
     // Randomize the children elements of the .deck class.
