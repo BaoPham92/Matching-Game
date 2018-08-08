@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Temporary winning message. (Todo: Create scoreboard to replace the alert.)
             alert(`You win!`);
+
+            // Display modal/scoreboard
+            displayScore();
         }
 
         // Condition for matching elements. (cards)
@@ -142,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Subtract amount of moves left.
                 numMoves = parseInt(moves.innerHTML, 10) - 1;
                 moves.innerHTML = numMoves;
-                console.log(`Number of moves left ${numMoves}.`); // Confirmination message to conssole.
+                console.log(`Number of moves left ${numMoves}.`); // Confirmination message to console.
 
                 // Remove stars each time 2 moves are used up.
                 switch (numMoves) {
@@ -182,6 +185,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 card.classList.remove('match', 'open', 'show');
                             }
                         }
+
+                        // Display modal/scoreboard
+                        displayScore();
 
                     }, 250);
 
@@ -365,15 +371,9 @@ document.addEventListener('DOMContentLoaded', function () {
         function hideModal() {
 
             // Toggle modal to be display.
-            modal.toggle('hidden');
-
-            // Confirmination console message.
-            //      
+            modal.toggle('hidden');  
         }
     }
-
-    // Temporary invocation for testing.
-    displayScore();
 
     // Randomize the children elements of the .deck class.
     // function randomize() {
