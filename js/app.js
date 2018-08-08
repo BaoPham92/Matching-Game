@@ -46,6 +46,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Container for timeCounter variable on line 272.
     let timeCounter;
 
+    // Modal div element.
+    const modal = document.querySelector('.modal').classList;
+
     // X element/button on modal scoreboard.
     const x = document.querySelector('.modal-x');
 
@@ -345,7 +348,6 @@ document.addEventListener('DOMContentLoaded', function () {
         function hideModal() {
 
             // Toggle modal to be display.
-            const modal = document.querySelector('.modal').classList;
             modal.toggle('hidden');
 
             // Confirmination console message.
