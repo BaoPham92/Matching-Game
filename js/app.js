@@ -46,6 +46,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Container for timeCounter variable on line 272.
     let timeCounter;
 
+    // X element/button on modal scoreboard.
+    const x = document.querySelector('.modal-x');
+    // console.log(x); // Confirmination message to console.
+
     // FUNCTIONS
 
     // On load reset board.
@@ -306,17 +310,52 @@ document.addEventListener('DOMContentLoaded', function () {
         seconds < 10 ? gameTimer.innerHTML = `${minutes}:0${seconds}` : gameTimer.innerHTML = `${minutes}:${seconds}`;
     }
 
+    // Function for displaying the endgame results.
     function displayScore() {
 
-        // The amount of stars left whilst displayScore is being invoked.
+        /// Current HTML elements to display the scores. \\\
+
+        // HTML Stars element.
+        const scoredStars = document.querySelector('#modal-stars');
+
+        // HTML Moves element.
+        const scoredMoves = document.querySelector('#modal-moves');
+
+        // HTML Time element.
+        const scoredTime = document.querySelector('#modal-time');
+
+        /// Current game scores whilst displayScore() is invoked. \\\
+
+        // Current number of stars.
         let totalStars = stars.children.length;
         
-        // The amount of moves left whilst displayScore() is invoked.
+        // Current number of moves.
         let totalMoves = numMoves;
 
-        // The amount of time whilst displayScore() is invoked.
+        // Current time.
         let totalTime = gameTimer.innerHTML;
+
+        // Click listener for clicking the close element in modal container.
+        x.addEventListener('click', function () {
+
+            // Invoking hideModal() toggling the display: none effect.
+            hideModal();
+        })
+
+        // Function for toggling hidden effect of modal.
+        function hideModal() {
+
+            // Toggle modal to be display.
+            const modal = document.querySelector('.modal').classList;
+            modal.toggle('hidden');
+
+            // Confirmination console message.
+            console.log(modal);
+        }
     }
+
+    // Temporary invocation for testing.
+    displayScore();
 
     // Randomize the children elements of the .deck class.
     // function randomize() {

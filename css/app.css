@@ -151,3 +151,14 @@ h1 {
     height: 450px;
     border-bottom: solid 1px black;
 }
+
+/* X element for modal */
+.modal-x {
+    cursor: pointer;
+}
+
+/* Styling for hidden triggers. */
+
+.hidden {
+    display: none;
+}
