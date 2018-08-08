@@ -318,24 +318,34 @@ document.addEventListener('DOMContentLoaded', function () {
         /// Current HTML elements to display the scores. \\\
 
         // HTML Stars element.
-        const scoredStars = document.querySelector('#modal-stars');
+        let scoredStars = document.querySelector('#modal-stars');
+        console.log(scoredStars); // Confirmination message to console.
 
         // HTML Moves element.
-        const scoredMoves = document.querySelector('#modal-moves');
+        let scoredMoves = document.querySelector('#modal-moves');
+        console.log(scoredMoves); // Confirmination message to console.
 
         // HTML Time element.
-        const scoredTime = document.querySelector('#modal-time');
+        let scoredTime = document.querySelector('#modal-time');
+        console.log(scoredTime); // Confirmination message to console.
 
         /// Current game scores whilst displayScore() is invoked. \\\
 
         // Current number of stars.
         let totalStars = stars.children.length;
-        
+        console.log(totalStars); // Confirmination message to console.
+
         // Current number of moves.
         let totalMoves = numMoves;
 
         // Current time.
         let totalTime = gameTimer.innerHTML;
+        console.log(totalTime); // Confirmination message to console.
+
+        // Display current statistics to modal elements.
+        scoredStars.innerHTML = `Stars left: ${totalStars}`;
+        scoredMoves.innerHTML = `Number of moves left: ${totalMoves}`;
+        scoredTime.innerHTML = `Time spent: ${totalTime}`;
 
         // Conditional if element is hidden.
         if (modal.contains('hidden')) {
@@ -358,7 +368,7 @@ document.addEventListener('DOMContentLoaded', function () {
             modal.toggle('hidden');
 
             // Confirmination console message.
-            console.log(modal);
+            //      
         }
     }
 
