@@ -327,8 +327,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function for displaying the endgame results.
     function displayScore() {
 
-        /// Current HTML elements to display the scores. \\\
-
         // HTML Stars element.
         let scoredStars = document.querySelector('#modal-stars');
         console.log(scoredStars); // Confirmination message to console.
@@ -340,8 +338,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // HTML Time element.
         let scoredTime = document.querySelector('#modal-time');
         console.log(scoredTime); // Confirmination message to console.
-
-        /// Current game scores whilst displayScore() is invoked. \\\
 
         // Current number of stars.
         let totalStars = stars.children.length;
@@ -362,14 +358,14 @@ document.addEventListener('DOMContentLoaded', function () {
         // Conditional if element is hidden.
         if (modal.contains('hidden')) {
 
-            // Invoke function for toggling class .hidden.
+            // Invoking hideModal();
             hideModal();
         }
 
         // Click listener for clicking the close element in modal container.
         x.addEventListener('click', function () {
 
-            // Invoking hideModal() toggling the display: none effect.
+            // Invoking hideModal();
             hideModal();
         })
 
