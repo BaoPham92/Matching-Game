@@ -52,6 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // X element/button on modal scoreboard.
     const x = document.querySelector('.modal-x');
 
+    // Modal button element
+    const modalButton = document.querySelector('.modal-button');
+
     // FUNCTIONS
 
     // On load reset board.

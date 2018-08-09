@@ -158,8 +158,15 @@ h1 {
     cursor: pointer;
 }
 
-/* Styling for hidden triggers. */
+/* Modal play again button */
+.modal-button {
+    position: absolute;
+    font-size: 25px;
+    bottom: 15.5%;
+    left: 45%;
+}
 
+/* Styling for hidden triggers. */
 .hidden {
     display: none;
 }
