@@ -261,6 +261,9 @@ document.addEventListener('DOMContentLoaded', function () {
         // Reload li elements. (stars)
         reloadStars();
 
+        // Clear timer for game clock.
+        clearTimer();
+
         // Confirmination console message.
         console.log(`Restart button clicked!`);
     })
