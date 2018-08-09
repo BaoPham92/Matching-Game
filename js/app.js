@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // FUNCTIONS
 
     // On load reset board.
-    window.onload = reset();
+    window.onload = resetCards();
 
     // Animate elements. (cards)
     deck.addEventListener('click', function (e) {
@@ -253,7 +253,7 @@ document.addEventListener('DOMContentLoaded', function () {
     restartButton.addEventListener('click', function (e) {
 
         // Iteration for removing classes to restart.
-        reset();
+        resetCards();
 
         // Reset move counter
         moves.innerHTML = `6`;
@@ -266,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     // Removing all classes for elements. (cards)
-    function reset() {
+    function resetCards() {
 
         // Iteration for removing classes to restart.
         for (const card of cards) {
