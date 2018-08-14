@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!toggleTime) {
 
                 // Invoke the timer function.
-                timer();
+                clock.start();
 
                 // Turn boolean to true.
                 toggleTime = true;
@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (numMoves === 0) {
 
                     // Clear timer.
-                    clearTimer();
+                    clock.reset();
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function () {
         reloadStars();
 
         // Clear timer for game clock.
-        clearTimer();
+        clock.reset();
 
         // Reset innerHTML for timer.
         gameTimer.innerHTML = `0:00`;
@@ -293,30 +293,40 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Incrementing timer for time indicator.
-    function timer() {
+    const clock = {
 
-        // Trigger for time counter.
-        timeCounter = setInterval(() => {
+        start: function timer() {
+    
+            // Trigger for time counter.
+            timeCounter = setInterval(() => {
+    
+                // Increment timeContainer.
+                timeContainer++;
+    
+                // Confirmination message to console.
+                console.log(`${timeContainer} seconds.`);
+    
+                // Invoking displayTime function.
+                displayTime();
+    
+            }, 1000)
+        },
 
-            // Increment timeContainer.
-            timeContainer++;
+        // Function for clearing timer.
+        reset: function clearTimer() {
+    
+            // Clear the variable containing the incrementing time logic.
+            clearInterval(timeCounter);
 
-            // Confirmination message to console.
-            console.log(`${timeContainer} seconds.`);
+            // Reset the incrementing value of the timer.
+            timeContainer = 0;
 
-            // Invoking displayTime function.
-            displayTime();
+            // Turn the toggleTime variable to false.
+            toggleTime = false;
+        }
 
-        }, 1000)
     }
-
-    // Function for clearing timer.
-    function clearTimer() {
-
-        // Clear the variable containing the incrementing time logic.
-        clearInterval(timeCounter);
-    }
-
+    
     function displayTime() {
 
         let seconds = timeContainer % 60;
