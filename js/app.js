@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Container for incremented time.
     let timeContainer = 0;
 
-    // Container for timeCounter variable on line 272.
+    // Container for timeCounter variable.
     let timeCounter;
 
     // Modal div element.
@@ -263,6 +263,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Clear timer for game clock.
         clearTimer();
+
+        // Reset innerHTML for timer.
+        gameTimer.innerHTML = `0:00`;
 
         // Confirmination console message.
         console.log(`Restart button clicked!`);
