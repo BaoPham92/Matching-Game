@@ -102,6 +102,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Display modal/scoreboard
             displayScore();
+
+            // Empty out the old matched elmenets for a new game.
+            matchedCards = [];
         }
 
         // Condition for matching elements. (cards)
@@ -292,7 +295,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('The stars indicators reloaded', stars) // Confirmination console message.
     }
 
-    // Incrementing timer for time indicator.
+    // Game clock functionality.
     const clock = {
 
         start: function timer() {
@@ -327,6 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
     
+    // Display JS data to game clock.
     function displayTime() {
 
         let seconds = timeContainer % 60;
