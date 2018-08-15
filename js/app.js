@@ -166,20 +166,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Conditional for moves at 0.
                 if (numMoves === 0) {
 
-                    // Clear timer.
-                    clock.reset();
-
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
 
                         // Losing message prompt on the client.
                         alert(`You lose`);
-
-                        // Reload li elements. (stars)
-                        reloadStars();
-
-                        // Reset move counter
-                        moves.innerHTML = `6`;
 
                         // Remove matching elements. (cards)
                         for (const card of cards) {
@@ -191,6 +182,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                 card.classList.remove('match', 'open', 'show');
                             }
                         }
+
+                        // Invoke gameRestart();
+                        gameRestart();
 
                         // Display modal/scoreboard
                         displayScore();
@@ -255,24 +249,31 @@ document.addEventListener('DOMContentLoaded', function () {
     // Restart board state.
     restartButton.addEventListener('click', function (e) {
 
-        // Iteration for removing classes to restart.
-        resetCards();
-
-        // Reset move counter
-        moves.innerHTML = `6`;
-
-        // Reload li elements. (stars)
-        reloadStars();
-
-        // Clear timer for game clock.
-        clock.reset();
-
-        // Reset innerHTML for timer.
-        gameTimer.innerHTML = `0:00`;
+        // Invoke gameRestart();
+        gameRestart();
 
         // Confirmination console message.
         console.log(`Restart button clicked!`);
     })
+
+    // Complete reset of game of functionalities.
+    function gameRestart() {
+
+        // Invoke resetCards().
+        resetCards();
+
+        // Invoke reloadStars().
+        reloadStars();
+
+        // Reset game clock. Invoke clock.reset().
+        clock.reset();
+
+        // Reset move counter.
+        moves.innerHTML = `6`;
+
+        // Reset innerHTML for timer.
+        gameTimer.innerHTML = `0:00`;
+    }
 
     // Removing all classes for elements. (cards)
     function resetCards() {
@@ -385,12 +386,12 @@ document.addEventListener('DOMContentLoaded', function () {
             // Invoking hideModal();
             hideModal();
         })
-
+        
         // Function for toggling hidden effect of modal.
         function hideModal() {
 
             // Toggle modal to be display.
-            modal.toggle('hidden');  
+            modal.toggle('hidden');
         }
     }
 
