@@ -103,6 +103,9 @@ document.addEventListener('DOMContentLoaded', function () {
             // Display modal/scoreboard
             displayScore();
 
+            // Invoke clock.reset() function.
+            clock.reset();
+
             // Empty out the old matched elmenets for a new game.
             matchedCards = [];
         }
@@ -327,6 +330,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Turn the toggleTime variable to false.
             toggleTime = false;
+
+            // Reset innerHTML for timer.
+            gameTimer.innerHTML = `0:00`;
         }
 
     }
@@ -385,6 +391,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Invoking hideModal();
             hideModal();
+
+            // Invoke gameRestart().
+            gameRestart();
         })
         
         // Function for toggling hidden effect of modal.
