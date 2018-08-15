@@ -385,23 +385,23 @@ document.addEventListener('DOMContentLoaded', function () {
             // Invoking hideModal();
             hideModal();
         }
+    }
 
-        // Click listener for clicking the close element in modal container.
-        x.addEventListener('click', function () {
+    // Click listener for clicking the close element in modal container.
+    x.addEventListener('click', function () {
 
-            // Invoking hideModal();
-            hideModal();
+        // Invoking hideModal();
+        hideModal();
 
-            // Invoke gameRestart().
-            gameRestart();
-        })
-        
-        // Function for toggling hidden effect of modal.
-        function hideModal() {
+        // Invoke gameRestart().
+        gameRestart();
+    })
 
-            // Toggle modal to be display.
-            modal.toggle('hidden');
-        }
+    // Function for toggling hidden effect of modal.
+    function hideModal() {
+
+        // Toggle modal to be display.
+        modal.toggle('hidden');
     }
 
     // Randomize the children elements of the .deck class.
