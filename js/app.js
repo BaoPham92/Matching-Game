@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 550);
 
                 // Subtract amount of moves left.
-                numMoves = parseInt(moves.innerHTML, 10) - 1;
+                numMoves = parseInt(moves.innerHTML, 10) + 1;
                 moves.innerHTML = numMoves;
                 console.log(`Number of moves left ${numMoves}.`); // Confirmination message to console.
 
