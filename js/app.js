@@ -157,13 +157,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 moves.innerHTML = numMoves;
                 console.log(`Number of moves left ${numMoves}.`); // Confirmination message to console.
 
-                // Remove stars each time 2 moves are used up.
+                // Remove stars each time 3 moves are used up.
                 switch (numMoves) {
-                    case 4: starCount();
+                    case 3: starCount();
                     break;
-                    case 2: starCount(); 
+                    case 6: starCount(); 
                     break;
-                    case 0: starCount();
+                    case 9: starCount();
                     break;
                 }
 
