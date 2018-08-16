@@ -273,10 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
         clock.reset();
 
         // Reset move counter.
-        moves.innerHTML = `6`;
-
-        // Reset innerHTML for timer.
-        gameTimer.innerHTML = `0:00`;
+        moves.innerHTML = `0`;
     }
 
     // Removing all classes for elements. (cards)
@@ -332,6 +329,13 @@ document.addEventListener('DOMContentLoaded', function () {
             // Turn the toggleTime variable to false.
             toggleTime = false;
 
+            // Reset innerHTML for timer.
+            gameTimer.innerHTML = `0:00`;
+        },
+
+        // Default time settings.
+        default: function defaultTime() {
+            
             // Reset innerHTML for timer.
             gameTimer.innerHTML = `0:00`;
         }
