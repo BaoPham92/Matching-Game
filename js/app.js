@@ -53,7 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const x = document.querySelector('.modal-x');
 
     // Modal button element
-    const modalButton = document.querySelector('.modal-button');
+    const modalButton = document.querySelector('.modal-button').classList;
+    console.log(modalButton);
 
     // FUNCTIONS
 
@@ -368,7 +369,7 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log(totalStars); // Confirmination message to console.
 
         // Current number of moves.
-        let totalMoves = numMoves;
+        let totalMoves = moves.innerHTML;
 
         // Current time.
         let totalTime = gameTimer.innerHTML;
