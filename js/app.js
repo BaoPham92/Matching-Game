@@ -393,9 +393,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Invoking hideModal();
         hideModal();
-
-        // Invoke gameRestart().
-        gameRestart();
     })
 
     // Function for toggling hidden effect of modal.
