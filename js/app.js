@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const x = document.querySelector('.modal-x');
 
     // Modal button element
-    const modalButton = document.querySelector('.modal-button').classList;
+    const modalButton = document.querySelector('.modal-button');
     console.log(modalButton);
 
     // FUNCTIONS
@@ -196,12 +196,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     }, 250);
 
                     // Other functions to execute after firsts timer clears.
-                    // setTimeout(() => {
+                    setTimeout(() => {
 
-                    //     // Element (cards) randomization upon losing game conditions.
-                    //     randomize();
+                        // Element (cards) randomization upon losing game conditions.
+                        randomize();
 
-                    // }, 500);
+                    }, 500);
 
                 }
 
@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Randomize elements. (cards)
-        // randomize();
+        randomize();
     }
 
     // Reload stars
@@ -388,6 +388,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // Click listener for "Play again" button. (modalButton).
+    modalButton.addEventListener('click', function(){
+
+        // Invoking hideModal();
+        hideModal();
+
+        // Invoking gameRestart();
+        gameRestart();
+    })
+
     // Click listener for clicking the close element in modal container.
     x.addEventListener('click', function () {
 
@@ -403,23 +413,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Randomize the children elements of the .deck class.
-    // function randomize() {
+    function randomize() {
 
-    //     // New deck container
-    //     const newDeck = Array.from(document.querySelectorAll('.deck li'));
-    //     console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
+        // New deck container
+        const newDeck = Array.from(document.querySelectorAll('.deck li'));
+        console.log('cards to shuffle', newDeck); // Shuffle element by id (container for card elements.)
 
-    //     // Container for shuffled cards.
-    //     const randomizedDeck = shuffle(newDeck);
-    //     console.log('cards that are shuffled', randomizedDeck); // Confirmination message to console.
+        // Container for shuffled cards.
+        const randomizedDeck = shuffle(newDeck);
+        console.log('cards that are shuffled', randomizedDeck); // Confirmination message to console.
 
-    //     // Replace the old nodeList with new one.
-    //     for (const card of newDeck) {
-    //         deck.appendChild(card);
-    //     }
+        // Replace the old nodeList with new one.
+        for (const card of newDeck) {
+            deck.appendChild(card);
+        }
 
-    //     console.log(`Randomized cards activated`); // Confirmination console message.
-    // }
+        console.log(`Randomized cards activated`); // Confirmination console message.
+    }
 
     /*
      * Display the cards on the page
