@@ -328,9 +328,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Turn the toggleTime variable to false.
             toggleTime = false;
-
-            // Reset innerHTML for timer.
-            gameTimer.innerHTML = `0:00`;
         },
 
         // Default time settings.
