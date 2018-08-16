@@ -168,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 // Conditional for moves at 0.
-                if (numMoves === 0) {
+                if (numMoves === 9) {
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
