@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Display current statistics to modal elements.
         scoredStars.innerHTML = `Stars left: ${totalStars}`;
-        scoredMoves.innerHTML = `Number of moves left: ${totalMoves}`;
+        scoredMoves.innerHTML = `Number of moves made: ${totalMoves}`;
         scoredTime.innerHTML = `Time spent: ${totalTime}`;
 
         // Conditional if element is hidden.
