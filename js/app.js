@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Clear array so the next match can sequence. 
                     clickedCards = [];
 
-                }, 550);
+                }, 240);
 
                 // Subtract amount of moves left.
                 numMoves = parseInt(moves.innerHTML, 10) + 1;
@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     break;
                 }
 
-                // Conditional for moves at 0.
+                // Conditional for moves at 9.
                 if (numMoves === 9) {
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                         // Invoke gameRestart();
                         gameRestart();
-
+                        
                         // Display modal/scoreboard
                         displayScore();
 
@@ -206,7 +206,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 // Logging false match to message to console.
-                console.log(`Checked cards. No match found.`)
+                console.log(`Checked cards. No match found.`);
 
             };
         }
@@ -255,6 +255,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Invoke gameRestart();
         gameRestart();
+
+        // Invoke clock.default(); (Default starting moves.)
+        clock.default();
 
         // Confirmination console message.
         console.log(`Restart button clicked!`);
@@ -397,6 +400,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Invoking gameRestart();
         gameRestart();
+
+        // Invoke clock.default(); (Default starting moves.)
+        clock.default();
     })
 
     // Click listener for clicking the close element in modal container.
