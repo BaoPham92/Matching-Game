@@ -4,6 +4,16 @@
 
 This is a project challenge for us to create a memory game with initial css elements representing the board. Here we are to create the functionalities through vanilla JS. Including the core practice of JS in this challenge, we display skillsets in HTML and CSS.
 
+## Instructions:
+
+- Download files.
+- Open index.html in browser of choice.
+
+#### Game instructions:
+
+- Matched all cards correctly.
+- You have 30 moves to guess 16 pairs.
+
 ## TODO List:
 
 - Replace temporary win/loss message for users. (Not required for completion.)
