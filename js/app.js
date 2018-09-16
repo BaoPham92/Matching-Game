@@ -159,16 +159,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 // Remove stars each time 3 moves are used up.
                 switch (numMoves) {
-                    case 3: starCount();
+                    case 10: starCount();
                     break;
-                    case 6: starCount(); 
+                    case 20: starCount(); 
                     break;
-                    case 9: starCount();
+                    case 30: starCount();
                     break;
                 }
 
                 // Conditional for moves at 9.
-                if (numMoves === 9) {
+                if (numMoves === 30) {
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
                     setTimeout(() => {
@@ -277,6 +277,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Reset move counter.
         moves.innerHTML = `0`;
+
+        // Empty matchedCards array.
+        matchedCards = [];
     }
 
     // Removing all classes for elements. (cards)
