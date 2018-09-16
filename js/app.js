@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     // Clear array so the next match can sequence. 
                     clickedCards = [];
 
-                }, 275);
+                }, 350);
 
                 // Subtract amount of moves made.
                 numMoves = parseInt(moves.innerHTML, 10) + 1;
