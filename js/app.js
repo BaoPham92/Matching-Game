@@ -280,6 +280,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Empty matchedCards array.
         matchedCards = [];
+
+        // Clear clickedCards array.
+        clickedCards = []
     }
 
     // Removing all classes for elements. (cards)
