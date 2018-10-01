@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     break;
                 }
 
-                // Conditional for moves at 9.
+                // Conditional for moves at 30.
                 if (numMoves === 30) {
 
                     // Temporary lose game indicator. (Todo: Replace temporary indicator with a scoreboard.)
