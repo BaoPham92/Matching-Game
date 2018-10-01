@@ -19,19 +19,19 @@
         </header>
 
         <!-- Modal presenting end game statistics win/loss -->
-            <div class="modal hidden">
+            <div class="modal hidden" aria-label="Hidden modal represnting player statistics when game meets a win condition.">
                 <div class="modal-content">
-                    <div class="modal-heading">
+                    <div class="modal-heading" aria-label="Modal heading container witholding player stats.">
                         <strong>Game statistics:</strong>
                         <span class="modal-x">
-                            <strong>X</strong>
+                            <strong aria-label="Close button for exiting modal.">X</strong>
                         </span>
                     </div>
 
-                    <div class="modal-stat">
-                        <span id="modal-stars">Stars left:</span>
-                        <span id="modal-moves">Number of moves made:</span>
-                        <span id="modal-time">Time spent:</span>
+                    <div class="modal-stat" aria-label="Player endgame statistics.">
+                        <span id="modal-stars" aria-label="Star indicator based on game performance.">Stars left:</span>
+                        <span id="modal-moves" aria-label="Number of moves indicator based on game performance.">Number of moves made:</span>
+                        <span id="modal-time" aria-label="Indicator of the last game sessions.">Time spent:</span>
                     </div>
 
                     <button class="modal-button">Play again</button>
